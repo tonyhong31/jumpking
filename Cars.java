@@ -9,13 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Cars extends Actor
 {
     private String[] I = 
-        {"AlfaRomeo.png", "AlphaTauri.png", "Alphine.png", "AstonMartin.png",
-            "Ferrari.png", "Haas.png", "McLaren.png", "Mercedes.png", 
-            "Redbull.png", "Williams.png"};
+        {"Haas.png", "Williams.png", "AlfaRomeo.png", "Alphine.png", 
+            "AlphaTauri.png",  "AstonMartin.png","Ferrari.png",
+            "Mercedes.png", "Redbull.png", "McLaren.png"};
+    int i = Greenfoot.getRandomNumber(10);
+    GreenfootImage image = new GreenfootImage(I[i]);
     public Cars(){ 
-        int i = Greenfoot.getRandomNumber(10);
-        //int n = I;
-        GreenfootImage image = new GreenfootImage(I[i]);
         image.scale(160, 110);
         setImage(image);
     }
@@ -27,10 +26,7 @@ public class Cars extends Actor
     public void act() 
     {
         // Add your action code here.
-        speed();
-
+        move(i+1);
     }   
-    public void speed(){
-       
-    }
 }
+
