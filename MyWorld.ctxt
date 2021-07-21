@@ -3,11 +3,8 @@ comment0.target=MyWorld
 comment0.text=\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=MyWorld()
-<<<<<<< HEAD
 comment2.params=state
-comment2.target=void\ add(java.lang.String)
-numComments=3
-=======
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\n\ \n
-numComments=2
->>>>>>> 51416917ad0a438a36db1f74ee5978a4ebbc87bc
+comment2.target=void\ add(int)
+comment3.params=
+comment3.target=void\ CarSpawn()
+numComments=4

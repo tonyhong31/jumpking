@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 51416917ad0a438a36db1f74ee5978a4ebbc87bc
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Write a description of class MyWorld here.
@@ -12,48 +9,71 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-<<<<<<< HEAD
-=======
-
->>>>>>> 51416917ad0a438a36db1f74ee5978a4ebbc87bc
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
-<<<<<<< HEAD
-    private String state;
-=======
->>>>>>> 51416917ad0a438a36db1f74ee5978a4ebbc87bc
+    private String[] theme = 
+        {"Forest1.jpeg", "Forest2.jpeg", "Forest3.jpeg", 
+            "Ice1.jpeg",  "Ice2.jpeg","Ice3.jpeg","Aqurarium1.jpeg", 
+            "Aqurarium2.jpeg","Aqurarium3.jpeg", "Desert1.jpeg", "Desert2.jpeg",
+            "Desert3.jpeg", "City1.jpeg", "City2.jpeg", "City3.jpeg"};
+
+    private int state;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
-<<<<<<< HEAD
-        state = "ice";
+        super(600, 400, 1);
+        state = 5;
         add(state);
+        CarSpawn();
     }
 
-    private void add(String state){
+    public void add(int state){
         String b = "";
-        if (state.equals("grass")){
+        if (state == 1){
             b = "GrassBase1.png";
             setBackground("Forest1.jpeg");}
-        else if (state.equals("ice")){
+        else if (state == 2){
             b = "IceBase1.png";
             setBackground("Ice1.jpeg");}
-        //if (state.equals("grass"))
-        //b = "GrassBase.png";
-        //if (state.equals("grass"))
-        //b = "GrassBase.png";
+        else if (state == 3) {
+            b = "Aqurarium1.jpeg";
+            setBackground("Aqurarium1.jpeg");}
+        else if (state == 4) {
+            b = "Desert1.jpeg";
+            setBackground("Desert1.jpeg");}
+        else if (state == 5) {
+            b = "City1.jpeg";
+            setBackground("City1.jpeg");}
+        List<Base> bases = getObjects(Base.class);
+
+            for (Base base : bases)
+            {
+                removeObject(base);
+            }
         Base base1 = new Base(b);
         addObject(base1, Greenfoot.getRandomNumber(600), 90);
         Base base2 = new Base(b);
-        addObject(base2, Greenfoot.getRandomNumber(600), 190);
+        addObject(base2, base1.getX() + Greenfoot.getRandomNumber(350), 190);
         Base base3 = new Base(b);
-        addObject(base3, Greenfoot.getRandomNumber(600), 290);
+        addObject(base3, base2.getX() - Greenfoot.getRandomNumber(350), 290);
         Base base4 = new Base(b);
-        addObject(base4, Greenfoot.getRandomNumber(600), 390);
-=======
->>>>>>> 51416917ad0a438a36db1f74ee5978a4ebbc87bc
+        addObject(base4, base3.getX() + Greenfoot.getRandomNumber(350), 390);
     }
+
+    private void CarSpawn(){
+        List<Cars> car = getObjects(Cars.class);
+
+            for (Cars cars : car)
+            {
+                removeObject(cars);
+            }
+        Cars pos1 = new Cars();
+        addObject(pos1, Greenfoot.getRandomNumber(2)*600, Greenfoot.getRandomNumber(4)*100 +60);
+        Cars pos2 = new Cars();
+        addObject(pos2, Greenfoot.getRandomNumber(2)*600, Greenfoot.getRandomNumber(4)*100 +60);
+    }
+
 }
+

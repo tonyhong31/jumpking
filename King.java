@@ -7,14 +7,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 
-
 public class King extends Mover
 {
     private GreenfootImage walkingLeft1, walkingLeft2, faceFront, walkingRight1,
     walkingRight2;
     int count=0;
     private static final int jumpStrength = 16;
-    
+
     public King()
     {
         walkingLeft1 = new GreenfootImage("left1.png");
@@ -22,23 +21,23 @@ public class King extends Mover
         faceFront = new GreenfootImage("standing front.png");
         walkingRight1 = new GreenfootImage("right1.png");
         walkingRight2 = new GreenfootImage("right2.png");
+        setImage(faceFront);
     }
-    
+
     /**
      * Act - do whatever the King wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        
+
         checkKeys();
         checkFall();
     }    
-    
+
    
-   
-   private void checkKeys(){
-       
+    private void checkKeys(){
+
         if (Greenfoot.isKeyDown("left"))
         {
             setLocation(getX()-5, getY());
@@ -61,7 +60,7 @@ public class King extends Mover
                 }
             }  
         }    
-       
+
         if (Greenfoot.isKeyDown("right")) 
         {
             setLocation(getX()+5, getY());
@@ -85,7 +84,7 @@ public class King extends Mover
                 }
             }  
         }
-       
+
         if (Greenfoot.isKeyDown("space"))
         {
             if (onGround())
@@ -93,14 +92,14 @@ public class King extends Mover
                 jump();
             }   
         }   
-        }
-        
+    }
+
     private void jump()
     {
         setVSpeed(-jumpStrength);
         fall();
     }
-    
+
     private void checkFall()
     {
         if (onGround()) {
@@ -110,6 +109,5 @@ public class King extends Mover
             fall();
         }
     }
-    
     
 }
