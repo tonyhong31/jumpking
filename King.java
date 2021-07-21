@@ -33,6 +33,9 @@ public class King extends Mover
         
         checkKeys();
         checkFall();
+        mapChange();
+        fallDown();
+        
     }    
     
    
@@ -111,5 +114,24 @@ public class King extends Mover
         }
     }
     
+    private void mapChange()
+    {
+        if (getY() == 0){
+            MyWorld myworld = (MyWorld)getWorld();
+            myworld.add("grass"); 
+            
+            setLocation(getX(), 340);
+        }
+    }
+    
+     private void fallDown()
+    {
+        if (getY() == 399){
+            MyWorld myworld = (MyWorld)getWorld();
+            myworld.add("ice"); 
+            
+            setLocation(getX(), 20);
+        }
+    }
     
 }
