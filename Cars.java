@@ -8,15 +8,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Cars extends Actor
 {
-    private String[] I = 
-        {"Haas.png", "Williams.png", "AlfaRomeo.png", "Alphine.png", 
-            "AlphaTauri.png",  "AstonMartin.png","Ferrari.png",
-            "Mercedes.png", "Redbull.png", "McLaren.png"};
+    private String[] R = 
+        {"HaasR.png", "WilliamsR.png", "AlfaRomeoR.png", "AlphineR.png", 
+            "AlphaTauriR.png",  "AstonMartinR.png","FerrariR.png",
+            "MercedesR.png", "RedBullR.png", "McLarenR.png"};
     int i = Greenfoot.getRandomNumber(10);
-    GreenfootImage image = new GreenfootImage(I[i]);
+    GreenfootImage imageR = new GreenfootImage(R[i]);
+
+    private String[] L = 
+        {"HaasL.png", "WilliamsL.png", "AlfaRomeoL.png", "AlphineL.png", 
+            "AlphaTauriL.png",  "AstonMartinL.png","FerrariL.png",
+            "MercedesL.png", "RedBullL.png", "McLarenL.png"};
+    GreenfootImage imageL = new GreenfootImage(L[i]);
+
+    int speed = i+1;
     public Cars(){ 
-        image.scale(160, 110);
-        setImage(image);
+        imageR.scale(160, 110);
+        imageL.scale (160, 110);
+        setImage(imageR);
     }
 
     /**
@@ -26,7 +35,18 @@ public class Cars extends Actor
     public void act() 
     {
         // Add your action code here.
-        move(i+1);
+        move(speed);
+        edge();
     }   
+
+    public void edge(){
+        if (isAtEdge()){
+            if (getImage().equals (imageR))
+                setImage(imageL);
+            else 
+                setImage(imageR);
+                speed = -speed;
+        }
+    }
 }
 
