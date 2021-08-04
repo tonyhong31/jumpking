@@ -117,7 +117,7 @@ public class King extends Mover
     {
         if (getY() == 0){
             MyWorld myworld = (MyWorld)getWorld();
-            myworld.add("grass"); 
+            myworld.add(1); 
             
             setLocation(getX(), 340);
         }
@@ -127,7 +127,7 @@ public class King extends Mover
     {
         if (getY() == 399){
             MyWorld myworld = (MyWorld)getWorld();
-            myworld.add("ice"); 
+            myworld.add(1); 
             
             setLocation(getX(), 20);
         }

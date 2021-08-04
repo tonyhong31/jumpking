@@ -20,12 +20,14 @@ public class MyWorld extends World
             "Aqurarium2.jpeg","Aqurarium3.jpeg", "Desert1.jpeg", "Desert2.jpeg",
             "Desert3.jpeg", "City1.jpeg", "City2.jpeg", "City3.jpeg"};
 
-    private int state;
+    public int state;
+    public int pos;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         state = 5;
+        pos = 100;
         add(state);
         CarSpawn();
     }
@@ -49,28 +51,36 @@ public class MyWorld extends World
             setBackground("City1.jpeg");}
         List<Base> bases = getObjects(Base.class);
 
-            for (Base base : bases)
-            {
-                removeObject(base);
-            }
+        for (Base base : bases)
+        {
+            removeObject(base);
+        }
         Base base1 = new Base(b);
-        addObject(base1, Greenfoot.getRandomNumber(600), 90);
+        addObject(base1, pos, 390);
         Base base2 = new Base(b);
-        addObject(base2, base1.getX() + Greenfoot.getRandomNumber(350), 190);
+        addObject(base2, base1.getX() + Greenfoot.getRandomNumber(150), 290);
         Base base3 = new Base(b);
-        addObject(base3, base2.getX() - Greenfoot.getRandomNumber(350), 290);
+        addObject(base3, base2.getX() - Greenfoot.getRandomNumber(300), 190);
         Base base4 = new Base(b);
-        addObject(base4, base3.getX() + Greenfoot.getRandomNumber(350), 390);
-
+        addObject(base4, base3.getX() + Greenfoot.getRandomNumber(150), 90);
+        pos = base4.getX();
+        int a = 0;
+        if (pos <= 300) 
+            a = 1;
+        
+        else
+            a = -1;
+        pos = pos + 60*a;
+        CarSpawn();
     }
 
     private void CarSpawn(){
         List<Cars> car = getObjects(Cars.class);
 
-            for (Cars cars : car)
-            {
-                removeObject(cars);
-            }
+        for (Cars cars : car)
+        {
+            removeObject(cars);
+        }
         Cars pos1 = new Cars();
         addObject(pos1, Greenfoot.getRandomNumber(2)*600, Greenfoot.getRandomNumber(4)*100 +60);
         Cars pos2 = new Cars();
