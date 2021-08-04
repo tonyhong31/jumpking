@@ -20,17 +20,18 @@ public class MyWorld extends World
             "Aqurarium2.jpeg","Aqurarium3.jpeg", "Desert1.jpeg", "Desert2.jpeg",
             "Desert3.jpeg", "City1.jpeg", "City2.jpeg", "City3.jpeg"};
 
-    private int state;
+    public int state;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        state = 5;
+        state = 1;
         add(state);
         CarSpawn();
     }
 
     public void add(int state){
+        this.state = state;
         String b = "";
         if (state == 1){
             b = "GrassBase1.png";
@@ -47,6 +48,12 @@ public class MyWorld extends World
         else if (state == 5) {
             b = "City1.jpeg";
             setBackground("City1.jpeg");}
+        else if (state == 0) {
+            
+            Greenfoot.stop();
+            return;
+        }
+        
         List<Base> bases = getObjects(Base.class);
 
             for (Base base : bases)

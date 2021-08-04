@@ -4,12 +4,7 @@ comment0.text=\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\n\ \n\ @autho
 comment1.params=
 comment1.target=MyWorld()
 comment2.params=state
-<<<<<<< HEAD
-comment2.target=void\ add(java.lang.String)
-numComments=3
-=======
 comment2.target=void\ add(int)
 comment3.params=
 comment3.target=void\ CarSpawn()
 numComments=4
->>>>>>> fdbdcf55a58b40c50ac57308c8a3688e10c584e6
