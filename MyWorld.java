@@ -42,13 +42,13 @@ public class MyWorld extends World
             b = "IceBase1.png";
             setBackground("Ice1.jpeg");}
         else if (state == 3) {
-            b = "Aqurarium1.jpeg";
+            b = "AquaBase.png";
             setBackground("Aqurarium1.jpeg");}
         else if (state == 4) {
-            b = "Desert1.jpeg";
+            b = "DesertBase.png";
             setBackground("Desert1.jpeg");}
         else if (state == 5) {
-            b = "City1.jpeg";
+            b = "CityBase.png";
             setBackground("City1.jpeg");}
         else if (state == 0) {
             
@@ -70,14 +70,21 @@ public class MyWorld extends World
         addObject(base3, base2.getX() - Greenfoot.getRandomNumber(300), 190);
         Base base4 = new Base(b);
         addObject(base4, base3.getX() + Greenfoot.getRandomNumber(150), 90);
-        pos = base4.getX();
+        
+        List<King> king = getObjects(King.class);
+
+        for (King k : king)
+        {
+            pos = k.getX();
+        }
+        
         int a = 0;
         if (pos <= 300) 
             a = 1;
         
         else
             a = -1;
-        pos = pos + 60*a;
+        pos = pos + 45*a;
         CarSpawn();
     }
 
