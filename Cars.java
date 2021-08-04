@@ -21,7 +21,7 @@ public class Cars extends Actor
             "MercedesL.png", "RedBullL.png", "McLarenL.png"};
     GreenfootImage imageL = new GreenfootImage(L[i]);
 
-    int speed = i+1;
+    int speed = (i+2)/2;
     public Cars(){ 
         imageR.scale(160, 110);
         imageL.scale (160, 110);

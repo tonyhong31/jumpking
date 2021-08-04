@@ -22,14 +22,20 @@ public class MyWorld extends World
 
     public int state;
     public int pos;
+    public int posture;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        pos = 100;
+        pos = Greenfoot.getRandomNumber(600);
         state = 1;
         add(state);
         CarSpawn();
+        King king = new King();
+        
+        
+        
+        addObject(king, posture, 350);
     }
 
     public void add(int state){
@@ -50,8 +56,12 @@ public class MyWorld extends World
         else if (state == 5) {
             b = "City1.jpeg";
             setBackground("City1.jpeg");}
+        else if (state == 6) {
+            gameWin();
+            Greenfoot.stop();
+            return;}
         else if (state == 0) {
-            
+            gameOver();
             Greenfoot.stop();
             return;
         }
@@ -64,6 +74,7 @@ public class MyWorld extends World
         }
         Base base1 = new Base(b);
         addObject(base1, pos, 390);
+        posture = pos;
         Base base2 = new Base(b);
         addObject(base2, base1.getX() + Greenfoot.getRandomNumber(150), 290);
         Base base3 = new Base(b);
@@ -79,6 +90,7 @@ public class MyWorld extends World
             a = -1;
         pos = pos + 60*a;
         CarSpawn();
+        
     }
 
     private void CarSpawn(){
@@ -93,6 +105,15 @@ public class MyWorld extends World
         Cars pos2 = new Cars();
         addObject(pos2, Greenfoot.getRandomNumber(2)*600, Greenfoot.getRandomNumber(4)*100 +60);
     }
-
+    
+    public void gameOver() 
+    {
+        addObject(new ScoreBoard(false), getWidth()/2, getHeight()/2);
+    }
+    
+    public void gameWin() 
+    {
+        addObject(new ScoreBoard(true), getWidth()/2, getHeight()/2);
+    }
 }
 

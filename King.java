@@ -117,7 +117,7 @@ public class King extends Mover
     {
         if (getY() == 0){
             MyWorld myworld = (MyWorld)getWorld();
-            myworld.add(myworld.state + 1); 
+            myworld.add(myworld.state + 1);
             // myworld.state=3;            
             setLocation(getX(), 340);
         }
