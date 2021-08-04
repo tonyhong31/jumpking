@@ -35,7 +35,7 @@ public class King extends Mover
         checkFall();
         mapChange();
         fallDown();
-        
+        crash();
     }    
 
    
@@ -117,8 +117,8 @@ public class King extends Mover
     {
         if (getY() == 0){
             MyWorld myworld = (MyWorld)getWorld();
-            myworld.add(1); 
-            
+            myworld.add(myworld.state + 1); 
+            // myworld.state=3;            
             setLocation(getX(), 340);
         }
     }
@@ -127,9 +127,15 @@ public class King extends Mover
     {
         if (getY() == 399){
             MyWorld myworld = (MyWorld)getWorld();
-            myworld.add(1); 
-            
+            myworld.add(myworld.state - 1);             
             setLocation(getX(), 20);
+        }
+    }
+    
+    private void crash()
+    {
+        if (isTouching(Cars.class)){
+            setLocation(getX(), 340);
         }
     }
     

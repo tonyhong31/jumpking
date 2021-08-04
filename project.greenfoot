@@ -1,19 +1,36 @@
 #Greenfoot project file
 class.Base.image=GrassBase1.png
 class.Cars.image=AlfaRomeo.png
+class.King.image=standing\ front.png
 class.MyWorld.image=Forest1.jpeg
+class.cliff.image=\uC2A4\uD06C\uB9B0\uC0F7\ 2021-06-01\ \uC624\uD6C4\ 7.51.07.png
 dependency1.from=MyWorld
 dependency1.to=Base
 dependency1.type=UsesDependency
 dependency2.from=MyWorld
 dependency2.to=Cars
 dependency2.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=822
 editor.fx.0.width=1440
 editor.fx.0.x=0
 editor.fx.0.y=23
 height=900
 package.numDependencies=2
+=======
+dependency3.from=King
+dependency3.to=MyWorld
+dependency3.type=UsesDependency
+dependency4.from=King
+dependency4.to=Cars
+dependency4.type=UsesDependency
+editor.fx.0.height=900
+editor.fx.0.width=1440
+editor.fx.0.x=70
+editor.fx.0.y=23
+height=933
+package.numDependencies=4
+>>>>>>> 653550c91dabd893da410197176b6191dc6f8097
 package.numTargets=7
 project.charset=UTF-8
 publish.hasSource=false
@@ -28,16 +45,26 @@ readme.name=@README
 readme.width=47
 readme.x=10
 readme.y=10
+<<<<<<< HEAD
 simulation.speed=54
 target1.height=50
 target1.name=Mover
+=======
+simulation.speed=59
+target1.height=50
+target1.name=Cars
+>>>>>>> 653550c91dabd893da410197176b6191dc6f8097
 target1.showInterface=false
 target1.type=ClassTarget
 target1.width=80
 target1.x=0
 target1.y=0
 target2.height=50
+<<<<<<< HEAD
 target2.name=Cars
+=======
+target2.name=Mover
+>>>>>>> 653550c91dabd893da410197176b6191dc6f8097
 target2.showInterface=false
 target2.type=ClassTarget
 target2.width=80
@@ -81,5 +108,10 @@ target7.y=0
 version=3.0.0
 width=1440
 world.lastInstantiated=MyWorld
+<<<<<<< HEAD
 xPosition=0
 yPosition=0
+=======
+xPosition=43
+yPosition=23
+>>>>>>> 653550c91dabd893da410197176b6191dc6f8097
