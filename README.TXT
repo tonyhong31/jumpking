@@ -50,3 +50,5 @@ This code includes the basic function of the car. The character's progress is re
   - check for edge: function checks if car is at edge
   - at edge: car's image changes correspondingly to the direction, car moves the other way
 
+## Test video
+![454rtret4326trewt45ew65](https://user-images.githubusercontent.com/47979979/196154156-3b16f3e2-b17c-4a33-881c-bfda0dfae8f5.gif)
